@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WhatsApp Chat</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    (function () {
+      const scriptURL = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?54929';
+      const phoneNumber = '8111040362';
+
+      const options = {
+        enabled: true,
+        chatButtonSetting: {
+          backgroundColor: "#d10000",
+          ctaText: "Chat with us",
+          borderRadius: "25",
+          marginLeft: "0",
+          marginRight: "20",
+          marginBottom: "20",
+          ctaIconWATI: false,
+          position: "right"
+        },
+        brandSetting: {
+          brandName: "Tutelr.",
+          brandSubTitle: "Cybersecurity & Compliance Experts",
+          brandImg: "https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+          welcomeText: "Hi there! 👋\nHow can we assist you today?",
+          messageText: "{{page_link}}Hello, I have a question about {{page_link}}",
+          backgroundColor: "#d10000",
+          ctaText: "Chat with us",
+          borderRadius: "25",
+          autoShow: false,
+          phoneNumber: phoneNumber
+        }
+      };
+
+      function loadWidget() {
+        const s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = scriptURL;
+        s.onload = function () {
+          if (typeof CreateWhatsappChatWidget === 'function') {
+            CreateWhatsappChatWidget(options);
+          }
+        };
+        document.head.appendChild(s);
+      }
+
+      if (document.readyState === 'complete') {
+        loadWidget();
+      } else {
+        window.addEventListener('load', loadWidget);
+      }
+    })();
+  </script>
+</body>
+</html>
