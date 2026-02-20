@@ -1,0 +1,10 @@
+{
+  "name": "tutelr-career-fast-forward",
+  "private": true,
+  "version": "1.0.0",
+  "workspaces": ["apps/web", "apps/api"],
+  "scripts": {
+    "lint": "echo 'Add lint config per app'",
+    "typecheck": "echo 'Add typecheck config per app'"
+  }
+}
